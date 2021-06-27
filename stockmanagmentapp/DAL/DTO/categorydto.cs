@@ -9,6 +9,5 @@ namespace stockmanagmentapp.DAL.DTO
     public class categorydto
     {
         public List<cateogorydetaildto> categories { get; set; }
-
     }
 }

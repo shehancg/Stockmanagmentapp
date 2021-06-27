@@ -7,7 +7,7 @@ using stockmanagmentapp.DAL.DTO;
 
 namespace stockmanagmentapp.DAL.DAO
 {
-    public class categorydao : IDAO<CATEGORY, cateogorydetaildto>
+    public class categorydao :stockcontext, IDAO<CATEGORY, cateogorydetaildto>
     {
         public bool Delete(CATEGORY entity)
         {
@@ -23,7 +23,9 @@ namespace stockmanagmentapp.DAL.DAO
         {
             try
             {
-
+                maindb.CATEGORies.Add(entity);
+                maindb.SaveChanges();
+                return true;
             }
             catch(Exception ex)
             {

@@ -54,7 +54,7 @@ namespace stockmanagmentapp.mainforms
             this.panel1.Controls.Add(this.categoryname);
             this.panel1.Location = new System.Drawing.Point(245, 129);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 192);
+            this.panel1.Size = new System.Drawing.Size(321, 192);
             this.panel1.TabIndex = 0;
             // 
             // bunifuButton2
@@ -235,6 +235,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuButton1.TextMarginLeft = 0;
             this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
             // bunifuTextBox1
             // 
@@ -264,7 +265,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(157, 29);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(165, 29);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;

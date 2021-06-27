@@ -8,10 +8,6 @@ namespace stockmanagmentapp.DAL.DAO
 {
     public class stockcontext
     {
-        public stockmanagmentappentities1 db = new stockmanagmentappentities1();
-    }
-
-    public class stockmanagmentappentities1
-    {
+        public maindbEntities maindb = new maindbEntities();
     }
 }
