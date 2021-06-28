@@ -37,7 +37,7 @@ namespace stockmanagmentapp
         {
             if(isvalidlogin())
             {
-                using(SqlConnection conn=new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\databases\maindb.mdf;Integrated Security=True;Connect Timeout=30"))
+                using(SqlConnection conn=new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\bin\Debug\maindb.mdf;Integrated Security=True;Connect Timeout=5000"))
                 {
                     string query = "SELECT * FROM login WHERE adminname='" + adminTextBox1.Text.Trim() + "'AND adminpassword='" + passwordTextBox2.Text.Trim() + "'";
                     SqlDataAdapter sda = new SqlDataAdapter(query, conn);

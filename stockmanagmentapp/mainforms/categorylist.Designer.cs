@@ -560,6 +560,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuTextBox1.TextPlaceholder = "Enter text";
             this.bunifuTextBox1.UseSystemPasswordChar = false;
             this.bunifuTextBox1.WordWrap = true;
+            this.bunifuTextBox1.TextChange += new System.EventHandler(this.bunifuTextBox1_TextChange);
             // 
             // categoryname
             // 
@@ -582,6 +583,7 @@ namespace stockmanagmentapp.mainforms
             this.Controls.Add(this.panel1);
             this.Name = "categorylist";
             this.Text = "categorylist";
+            this.Load += new System.EventHandler(this.categorylist_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();

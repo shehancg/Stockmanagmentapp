@@ -35,7 +35,16 @@ namespace stockmanagmentapp.DAL.DAO
 
         public List<cateogorydetaildto> Select()
         {
-            throw new NotImplementedException();
+            List<cateogorydetaildto> categories = new List<cateogorydetaildto>();
+            var list = maindb.CATEGORies;
+            foreach(var item in list)
+            {
+                cateogorydetaildto dto = new cateogorydetaildto();
+                dto.id = item.Id;
+                dto.categoryname = item.categoryname;
+                categories.Add(dto);
+            }
+            return categories;
         }
 
         public bool Update(CATEGORY entity)

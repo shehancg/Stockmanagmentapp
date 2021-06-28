@@ -31,7 +31,9 @@ namespace stockmanagmentapp.BLL
 
         public categorydto Select()
         {
-            throw new NotImplementedException();
+            categorydto dto = new categorydto();
+            dto.categories = dao.Select();
+            return dto;
         }
 
         public bool Update(cateogorydetaildto entity)
