@@ -278,7 +278,7 @@ namespace stockmanagmentapp.mainforms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 60);
+            this.label1.Location = new System.Drawing.Point(3, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 25);
             this.label1.TabIndex = 4;
@@ -462,6 +462,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuButton1.TextMarginLeft = 0;
             this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
             // categoryname
             // 
@@ -483,6 +484,7 @@ namespace stockmanagmentapp.mainforms
             this.Controls.Add(this.panel1);
             this.Name = "productform";
             this.Text = "productform";
+            this.Load += new System.EventHandler(this.productform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

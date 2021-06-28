@@ -526,6 +526,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuButton6.TextMarginLeft = 0;
             this.bunifuButton6.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton6.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton6.Click += new System.EventHandler(this.bunifuButton6_Click);
             // 
             // bunifuButton5
             // 
@@ -616,6 +617,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuButton5.TextMarginLeft = 0;
             this.bunifuButton5.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton5.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton5.Click += new System.EventHandler(this.bunifuButton5_Click);
             // 
             // label3
             // 
@@ -1262,6 +1264,7 @@ namespace stockmanagmentapp.mainforms
             this.Controls.Add(this.panel1);
             this.Name = "productlist";
             this.Text = "productlist";
+            this.Load += new System.EventHandler(this.productlist_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
