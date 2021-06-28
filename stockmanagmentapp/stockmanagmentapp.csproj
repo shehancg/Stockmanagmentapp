@@ -217,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\categorybll.cs" />
+    <Compile Include="BLL\customerbll.cs" />
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="DAL\CATEGORY.cs">
       <DependentUpon>datamodel.tt</DependentUpon>
@@ -225,6 +226,7 @@
       <DependentUpon>datamodel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\categorydao.cs" />
+    <Compile Include="DAL\DAO\customerdao.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
     <Compile Include="DAL\DAO\stockcontext.cs" />
     <Compile Include="DAL\datamodel.Context.cs">
@@ -244,6 +246,8 @@
     </Compile>
     <Compile Include="DAL\DTO\categorydto.cs" />
     <Compile Include="DAL\DTO\cateogorydetaildto.cs" />
+    <Compile Include="DAL\DTO\customerdetaildto.cs" />
+    <Compile Include="DAL\DTO\customerdto.cs" />
     <Compile Include="DAL\login.cs">
       <DependentUpon>datamodel.tt</DependentUpon>
     </Compile>

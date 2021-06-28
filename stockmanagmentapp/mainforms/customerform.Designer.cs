@@ -234,6 +234,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuButton1.TextMarginLeft = 0;
             this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
             // bunifuTextBox1
             // 
@@ -331,7 +332,6 @@ namespace stockmanagmentapp.mainforms
             this.Location = new System.Drawing.Point(245, 129);
             this.Name = "customerform";
             this.Text = "customerform";
-            this.Load += new System.EventHandler(this.customerform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
