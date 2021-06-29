@@ -221,10 +221,10 @@
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\productbll.cs" />
     <Compile Include="DAL\CATEGORY.cs">
-      <DependentUpon>datamodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CUSTOMER.cs">
-      <DependentUpon>datamodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\categorydao.cs" />
     <Compile Include="DAL\DAO\customerdao.cs" />
@@ -253,13 +253,28 @@
     <Compile Include="DAL\DTO\productdetaildto.cs" />
     <Compile Include="DAL\DTO\productdto.cs" />
     <Compile Include="DAL\login.cs">
-      <DependentUpon>datamodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\PRODUCT.cs">
-      <DependentUpon>datamodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\SALE.cs">
-      <DependentUpon>datamodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="dashboard.cs">
       <SubType>Form</SubType>
@@ -403,6 +418,13 @@
     <None Include="DAL\datamodel.edmx.diagram">
       <DependentUpon>datamodel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="DAL\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -445,12 +467,15 @@
       <DependentUpon>datamodel.edmx</DependentUpon>
       <LastGenOutput>datamodel.cs</LastGenOutput>
     </Content>
-    <Content Include="maindb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="DAL\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="maindb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>maindb.mdf</DependentUpon>
+    <Content Include="DAL\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <None Include="Resources\logo3.jpg" />
   </ItemGroup>
