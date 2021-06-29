@@ -6,4 +6,6 @@
 
 4th commit - customer list ekata new customer add kerrane puluwan thawa data grib view eke hariyata view kerenewa 
 
-5th commit - product add kerela listing kerrane puluwan eth datagrid view eke waradiyata heading pennane db aulath thiyenewa okkomata kalin eka hadanna one dn 
+5th commit - product add kerela listing kerrane puluwan eth datagrid view eke waradiyata heading pennane db aulath thiyenewa okkomata kalin eka hadanna one dn
+
+6th commit - product list eke datagrid eke heading name waradda haduwa db aula thama thiyenewa 

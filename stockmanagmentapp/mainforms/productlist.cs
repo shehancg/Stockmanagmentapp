@@ -57,11 +57,11 @@ namespace stockmanagmentapp.mainforms
             bunifuDropdown1.SelectedIndex = -1;
             bunifuDataGridView1.DataSource = dto.product;
             bunifuDataGridView1.Columns[0].HeaderText = "Product Name";
-            bunifuDataGridView1.Columns[0].HeaderText = "Category Name";
-            bunifuDataGridView1.Columns[0].HeaderText = "Stock Amount";
-            bunifuDataGridView1.Columns[0].HeaderText = "Price";
-            bunifuDataGridView1.Columns[0].Visible = false;
-            bunifuDataGridView1.Columns[0].Visible = false;
+            bunifuDataGridView1.Columns[1].HeaderText = "Category Name";
+            bunifuDataGridView1.Columns[2].HeaderText = "Stock Amount";
+            bunifuDataGridView1.Columns[3].HeaderText = "Price";
+            bunifuDataGridView1.Columns[4].Visible = false;
+            bunifuDataGridView1.Columns[5].Visible = false;
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)
