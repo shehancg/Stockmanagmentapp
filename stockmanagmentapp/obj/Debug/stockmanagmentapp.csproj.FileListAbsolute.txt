@@ -104,8 +104,6 @@ C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\st
 C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\obj\Debug\stockmanagmentapp.mainforms.deletedform.resources
 C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\obj\Debug\stockmanagmentapp.mainforms.productform.resources
 C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\obj\Debug\stockmanagmentapp.mainforms.salesform.resources
-C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\bin\Debug\maindb.mdf
-C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\bin\Debug\maindb_log.ldf
 C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\bin\Debug\EntityFramework.dll
 C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Lenovo\Documents\SEMESTER 3\C#\C# Tutorial\project\stockmanagmentapp\stockmanagmentapp\bin\Debug\EntityFramework.xml

@@ -11,3 +11,5 @@
 6th commit - product list eke datagrid eke heading name waradda haduwa db aula thama thiyenewa 
 
 7th commit - database aula haduwa yehhhh
+
+8th commit - exeception error ekak enewa stock add kerena kota stock alert eka hariyata wada kerenewa

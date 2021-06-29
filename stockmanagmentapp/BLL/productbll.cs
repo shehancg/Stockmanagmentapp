@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using stockmanagmentapp.mainforms;
 using stockmanagmentapp.DAL.DAO;
 using stockmanagmentapp.DAL.DTO;
 using stockmanagmentapp.DAL;
@@ -42,7 +43,13 @@ namespace stockmanagmentapp.BLL
 
         public bool Update(productdetaildto entity)
         {
-            throw new NotImplementedException();
+            PRODUCT product = new PRODUCT();
+            product.id = entity.productid;
+            product.price = entity.price;
+            product.productname = entity.productname;
+            product.stockamount = entity.stockamount;
+            product.categoryid = entity.categoryid;
+            return dao.Update(product);
         }
     }
 }

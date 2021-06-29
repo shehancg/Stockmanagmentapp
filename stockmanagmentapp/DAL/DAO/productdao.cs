@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using stockmanagmentapp.mainforms;
 using stockmanagmentapp.DAL;
 using stockmanagmentapp.DAL.DTO;
+using stockmanagmentapp.BLL;
 
 namespace stockmanagmentapp.DAL.DAO
 {
@@ -74,7 +76,20 @@ namespace stockmanagmentapp.DAL.DAO
 
         public bool Update(PRODUCT entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PRODUCT product = maindb.PRODUCTs.First(x => x.id == entity.id);
+                if(entity.categoryid==0)
+                {
+                    product.stockamount = entity.stockamount;
+                    maindb.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            { 
+                throw;
+            }
         }
     }
 }
