@@ -61,7 +61,18 @@ namespace stockmanagmentapp.DAL.DAO
 
         public bool Update(CUSTOMER entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CUSTOMER customer = maindb.CUSTOMERs.First(x => x.id == entity.id);
+                customer.customername = entity.customername;
+                maindb.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

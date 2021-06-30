@@ -335,6 +335,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuButton2.TextMarginLeft = 0;
             this.bunifuButton2.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton2.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton2.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
             // bunifuButton1
             // 
@@ -485,6 +486,7 @@ namespace stockmanagmentapp.mainforms
             this.bunifuDataGridView1.Size = new System.Drawing.Size(547, 227);
             this.bunifuDataGridView1.TabIndex = 3;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.bunifuDataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_RowEnter);
             // 
             // bunifuTextBox1
             // 

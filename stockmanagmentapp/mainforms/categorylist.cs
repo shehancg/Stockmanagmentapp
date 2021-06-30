@@ -53,5 +53,36 @@ namespace stockmanagmentapp.mainforms
             list = list.Where(x => x.categoryname.Contains(bunifuTextBox1.Text)).ToList();
             bunifuDataGridView1.DataSource = list;
         }
+        cateogorydetaildto detail = new cateogorydetaildto();
+        public cateogorydetaildto detil = new cateogorydetaildto();
+        public bool isupdate = false;
+
+        private void bunifuDataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail = new cateogorydetaildto();
+            detail.id = Convert.ToInt32(bunifuDataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.categoryname = bunifuDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            if (detail.id == 0)
+                MessageBox.Show("Please select a category from table ");
+            else
+            {
+                newcategoryform form = new newcategoryform();
+                form.detail = detail;
+                form.isupdate = true;
+                this.Hide();
+                form.ShowDialog();
+                this.Visible = true;
+
+                bll = new categorybll();
+                dto = bll.Select();
+                bunifuDataGridView1.DataSource = dto.categories;
+
+            }
+        }
     }
 }

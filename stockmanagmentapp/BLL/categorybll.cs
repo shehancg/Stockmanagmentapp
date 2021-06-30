@@ -38,7 +38,10 @@ namespace stockmanagmentapp.BLL
 
         public bool Update(cateogorydetaildto entity)
         {
-            throw new NotImplementedException();
+            CATEGORY category = new CATEGORY();
+            category.categoryname = entity.categoryname;
+            category.Id = entity.id;
+            return dao.Update(category);
         }
     }
 }

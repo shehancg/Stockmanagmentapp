@@ -332,6 +332,7 @@ namespace stockmanagmentapp.mainforms
             this.Location = new System.Drawing.Point(245, 129);
             this.Name = "customerform";
             this.Text = "customerform";
+            this.Load += new System.EventHandler(this.customerform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

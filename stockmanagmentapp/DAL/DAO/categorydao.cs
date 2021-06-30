@@ -49,7 +49,18 @@ namespace stockmanagmentapp.DAL.DAO
 
         public bool Update(CATEGORY entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CATEGORY category = maindb.CATEGORies.First(x => x.Id == entity.Id);
+                category.categoryname = entity.categoryname;
+                maindb.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

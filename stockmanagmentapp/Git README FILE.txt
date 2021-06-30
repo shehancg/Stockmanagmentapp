@@ -17,3 +17,5 @@
 9th commit - sales add and listing operations eth sales page eke data pennane na
 
 10th commit - error in listing sales page
+
+11th commit -  category and update operations are done

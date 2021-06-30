@@ -31,14 +31,38 @@ namespace stockmanagmentapp.mainforms
                 MessageBox.Show("Customer Name is Empty");
             else
             {
-                customerdetaildto customer = new customerdetaildto();
-                customer.customername = bunifuTextBox1.Text;
-                if(bll.Insert(customer))
+                if(!isupdate)
+                { 
+                    customerdetaildto customer = new customerdetaildto();
+                    customer.customername = bunifuTextBox1.Text;
+                    if (bll.Insert(customer))
+                    {
+                        MessageBox.Show("Customer was Added");
+                        bunifuTextBox1.Clear();
+                    }
+                }
+                else
                 {
-                    MessageBox.Show("Customer was Added");
-                    bunifuTextBox1.Clear();
+                    if (detail.customername == bunifuTextBox1.Text)
+                        MessageBox.Show("There is no change");
+                    else
+                    {
+                        detail.customername = bunifuTextBox1.Text;
+                        if(bll.Update(detail))
+                        {
+                            MessageBox.Show("Customer was updated");
+                            this.Close();
+                        }
+                    }
                 }
             }
+        }
+        public customerdetaildto detail = new customerdetaildto();
+        public bool isupdate = false;
+        private void customerform_Load(object sender, EventArgs e)
+        {
+            if (isupdate)
+                bunifuTextBox1.Text = detail.customername;
         }
     }
 }

@@ -50,5 +50,31 @@ namespace stockmanagmentapp.mainforms
             list = list.Where(x => x.customername.Contains(bunifuTextBox1.Text)).ToList();
             bunifuDataGridView1.DataSource = list;
         }
+        customerdetaildto detail = new customerdetaildto();
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            if (detail.id == 0)
+                MessageBox.Show("please select a customer from table ");
+            else
+            {
+                customerform form = new customerform();
+                form.detail = detail;
+                form.isupdate = true;
+                this.Hide();
+                form.ShowDialog();
+                this.Visible = true;
+                bll = new customerbll();
+                dto = bll.Select();
+                bunifuDataGridView1.DataSource = dto.customer;
+            }
+        }
+
+        private void bunifuDataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail = new customerdetaildto();
+            detail.id = Convert.ToInt32(bunifuDataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.customername = bunifuDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+        }
     }
 }

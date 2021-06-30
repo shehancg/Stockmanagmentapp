@@ -38,7 +38,10 @@ namespace stockmanagmentapp.BLL
 
         public bool Update(customerdetaildto entity)
         {
-            throw new NotImplementedException();
+            CUSTOMER customer = new CUSTOMER();
+            customer.id = entity.id;
+            customer.customername = entity.customername;
+            return dao.Update(customer);
         }
     }
 }
