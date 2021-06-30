@@ -1,6 +1,6 @@
 1st submit - completed ui
 
-2nd commit - new category data db ekata yanne na yakoo
+2nd commit - new category data db ekata yanne na 
 
 3rd commit - categorylist ekata new category ekak danna puluwan eth application eka close kelama maindb eke data tika okkoma delete wenewa apahu mula idala danna one
 
@@ -15,3 +15,5 @@
 8th commit - exeception error ekak enewa stock add kerena kota stock alert eka hariyata wada kerenewa
 
 9th commit - sales add and listing operations eth sales page eke data pennane na
+
+10th commit - error in listing sales page
