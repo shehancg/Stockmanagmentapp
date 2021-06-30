@@ -14,7 +14,39 @@ namespace stockmanagmentapp.DAL.DAO
     {
         public bool Delete(PRODUCT entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if(entity.id!=0)
+                {
+                    PRODUCT product = maindb.PRODUCTs.First(x => x.id == entity.id);
+                    product.isdeleted = true;
+                    product.deleteddate = DateTime.Today;
+                    maindb.SaveChanges();
+                }
+                else if(entity.categoryid!=0)
+                {
+                    List<PRODUCT> list = maindb.PRODUCTs.Where(x => x.categoryid == entity.categoryid).ToList();
+                    foreach(var item in list)
+                    {
+                        item.isdeleted = true;
+                        item.deleteddate = DateTime.Today;
+                        List<SALE> sales = maindb.SALES.Where(x => x.productid == item.id).ToList();
+                        foreach(var item2 in sales)
+                        {
+                            item2.isdeleted = true;
+                            item2.deleteddate = DateTime.Today;
+                        }
+                        maindb.SaveChanges();
+                    }
+                    maindb.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool GetBack(int ID)
@@ -42,7 +74,7 @@ namespace stockmanagmentapp.DAL.DAO
             try
             {
                 List<productdetaildto> product = new List<productdetaildto>();
-                var list = (from p in maindb.PRODUCTs
+                var list = (from p in maindb.PRODUCTs.Where(x=>x.isdeleted==false)
                             join c in maindb.CATEGORies on p.categoryid equals c.Id
                             select new
                             {
@@ -79,11 +111,18 @@ namespace stockmanagmentapp.DAL.DAO
             try
             {
                 PRODUCT product = maindb.PRODUCTs.First(x => x.id == entity.id);
-                if(entity.categoryid==0)
+                if(entity.categoryid == 0)
                 {
                     product.stockamount = entity.stockamount;
-                    maindb.SaveChanges();
+                    
                 }
+                else
+                {
+                    product.productname = entity.productname;
+                    product.price = entity.price;
+                    product.categoryid = entity.categoryid;
+                }
+                maindb.SaveChanges();
                 return true;
             }
             catch (Exception)

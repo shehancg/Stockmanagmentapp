@@ -12,7 +12,46 @@ namespace stockmanagmentapp.DAL.DAO
     {
         public bool Delete(SALE entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if(entity.id!=0)
+                {
+                    SALE sales = maindb.SALES.First(x => x.id == entity.id);
+                    sales.isdeleted = true;
+                    sales.deleteddate = DateTime.Today;
+                    maindb.SaveChanges();
+                    return true;
+                }
+                else if(entity.productid!=0)
+                {
+                    List<SALE> sales = maindb.SALES.Where(x => x.productid == entity.productid).ToList();
+                    foreach(var item in sales)
+                    {
+                        item.isdeleted = true;
+                        item.deleteddate = DateTime.Today;
+
+                    }
+                    maindb.SaveChanges();
+                }
+                else if(entity.customerid!=0)
+                {
+                    List<SALE> sales = maindb.SALES.Where(x => x.customerid == entity.customerid).ToList();
+                    foreach(var item in sales)
+                    {
+                        item.isdeleted = true;
+                        item.deleteddate = DateTime.Today;
+                    }
+                    maindb.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+                
         }
 
         public bool GetBack(int ID)

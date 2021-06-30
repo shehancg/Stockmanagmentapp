@@ -51,10 +51,6 @@ namespace stockmanagmentapp.mainforms
 
         private void saleslist_Load(object sender, EventArgs e)
         {
-            bunifuDropdown1.DataSource = dto.categories;
-            bunifuDropdown1.DisplayMember = "CategoryName";
-            bunifuDropdown1.ValueMember = "ID";
-            bunifuDropdown1.SelectedIndex = -1;
             dto = bll.Select();
             bunifuDataGridView1.DataSource = dto.sales;
             bunifuDataGridView1.Columns[0].HeaderText = "Customer Name";
@@ -67,7 +63,11 @@ namespace stockmanagmentapp.mainforms
             bunifuDataGridView1.Columns[4].Visible = false;
             bunifuDataGridView1.Columns[5].Visible = false;
             bunifuDataGridView1.Columns[9].Visible = false;
-            bunifuDataGridView1.Columns[10].Visible = false;  
+            bunifuDataGridView1.Columns[10].Visible = false;
+            bunifuDropdown1.DataSource = dto.categories;
+            bunifuDropdown1.DisplayMember = "CategoryName";
+            bunifuDropdown1.ValueMember = "ID";
+            bunifuDropdown1.SelectedIndex = -1;
         }
 
         private void bunifuButton5_Click(object sender, EventArgs e)

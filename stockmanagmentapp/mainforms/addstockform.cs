@@ -58,7 +58,7 @@ namespace stockmanagmentapp.mainforms
                 int sumstock = detail.stockamount;
                 sumstock += Convert.ToInt32(bunifuTextBox4.Text);
                 detail.stockamount = sumstock;
-                if(bll.Update(detail))
+                if (bll.Update(detail))
                 {
                     MessageBox.Show("Stock was Added");
                     bll = new productbll();

@@ -12,9 +12,16 @@ namespace stockmanagmentapp.BLL
     public class categorybll : IBLL<cateogorydetaildto, categorydto>
     {
         categorydao dao = new categorydao();
+        productdao productdao = new productdao();
         public bool Delete(cateogorydetaildto entity)
         {
-            throw new NotImplementedException();
+            CATEGORY category = new CATEGORY();
+            category.Id = entity.id;
+            dao.Delete(category);
+            PRODUCT product = new PRODUCT();
+            product.categoryid = entity.id;
+            productdao.Delete(product);
+            return true;
         }
 
         public bool Getback(cateogorydetaildto entity)

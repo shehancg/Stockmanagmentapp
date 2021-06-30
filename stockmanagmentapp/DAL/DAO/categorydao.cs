@@ -11,7 +11,19 @@ namespace stockmanagmentapp.DAL.DAO
     {
         public bool Delete(CATEGORY entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CATEGORY category = maindb.CATEGORies.First(x => x.Id == entity.Id);
+                category.isdeleted = true;
+                category.deleteddate = DateTime.Today;
+                maindb.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool GetBack(int ID)
@@ -36,7 +48,7 @@ namespace stockmanagmentapp.DAL.DAO
         public List<cateogorydetaildto> Select()
         {
             List<cateogorydetaildto> categories = new List<cateogorydetaildto>();
-            var list = maindb.CATEGORies;
+            var list = maindb.CATEGORies.Where(x=>x.isdeleted==false).ToList();
             foreach(var item in list)
             {
                 cateogorydetaildto dto = new cateogorydetaildto();

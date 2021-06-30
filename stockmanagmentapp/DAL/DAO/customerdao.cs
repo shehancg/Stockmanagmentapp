@@ -13,7 +13,19 @@ namespace stockmanagmentapp.DAL.DAO
     {
         public bool Delete(CUSTOMER entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CUSTOMER customer = maindb.CUSTOMERs.First(x => x.id == entity.id);
+                customer.isdeleted = true;
+                customer.deleteddate = DateTime.Today;
+                maindb.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool GetBack(int ID)
@@ -42,7 +54,7 @@ namespace stockmanagmentapp.DAL.DAO
             try
             {
                 List<customerdetaildto> customer = new List<customerdetaildto>();
-                var list = maindb.CUSTOMERs;
+                var list = maindb.CUSTOMERs.Where(x=>x.isdeleted==false).ToList();
                 foreach(var item in list)
                 {
                     customerdetaildto dto = new customerdetaildto();

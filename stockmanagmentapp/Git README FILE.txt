@@ -19,3 +19,5 @@
 10th commit - error in listing sales page
 
 11th commit -  category and update operations are done
+
+12th commit - product,customer,category delete functions were added

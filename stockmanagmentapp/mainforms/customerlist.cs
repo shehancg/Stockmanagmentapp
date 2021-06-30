@@ -76,5 +76,26 @@ namespace stockmanagmentapp.mainforms
             detail.customername = bunifuDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
 
         }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            if (detail.id == 0)
+                MessageBox.Show("Please select a customer from table");
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure", "Warning", MessageBoxButtons.YesNo);
+                if(result==DialogResult.Yes)
+                {
+                    if(bll.Delete(detail))
+                    {
+                        MessageBox.Show("Customer was Deleted");
+                        bll = new customerbll();
+                        dto = bll.Select();
+                        bunifuDataGridView1.DataSource = dto.customer;
+                        bunifuTextBox1.Clear();
+                    }
+                }
+            }
+        }
     }
 }

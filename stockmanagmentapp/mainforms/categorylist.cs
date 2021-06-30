@@ -84,5 +84,27 @@ namespace stockmanagmentapp.mainforms
 
             }
         }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            if (detail.id == 0)
+                MessageBox.Show("Please select a Category from table");
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you Sure?", "Warning!!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Category was deleted");
+                        bll = new categorybll();
+                        dto = bll.Select();
+                        bunifuDataGridView1.DataSource = dto.categories;
+                        bunifuTextBox1.Clear();
+
+                    }
+                }
+            }
+        }
     }
 }

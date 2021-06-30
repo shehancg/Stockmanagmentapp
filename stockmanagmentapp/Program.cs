@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using stockmanagmentapp.mainforms;
+using stockmanagmentapp.BLL;
+using stockmanagmentapp.DAL.DAO;
+using stockmanagmentapp.DAL.DTO;
+using stockmanagmentapp.Properties;
 
 namespace stockmanagmentapp
 {

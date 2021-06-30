@@ -115,5 +115,59 @@ namespace stockmanagmentapp.mainforms
             bunifuRadioButton1.Checked = false;
             bunifuDataGridView1.DataSource = dto.product;
         }
+        productdetaildto detail = new productdetaildto();
+
+        private void bunifuDataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail = new productdetaildto();
+            detail.productid = Convert.ToInt32(bunifuDataGridView1.Rows[e.RowIndex].Cells[4].Value);
+            detail.categoryid = Convert.ToInt32(bunifuDataGridView1.Rows[e.RowIndex].Cells[5].Value);
+            detail.productname = bunifuDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            detail.price = Convert.ToInt32(bunifuDataGridView1.Rows[e.RowIndex].Cells[3].Value);
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            if (detail.productid == 0)
+                MessageBox.Show("Please select a product from table");
+            else
+            {
+                productform form = new productform();
+                form.isupdate = true;
+                form.detail = detail;
+                form.dto = dto;
+                this.Hide();
+                form.ShowDialog();
+                this.Visible = true;
+                bll = new productbll();
+                dto = bll.Select();
+                bunifuDataGridView1.DataSource = dto.product;
+                cleanfilters();
+
+            }
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            if (detail.productid == 0)
+                MessageBox.Show("Please select a product from table");
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you Sure?", "Warning!!", MessageBoxButtons.YesNo);
+                if(result==DialogResult.Yes)
+                {
+                    if(bll.Delete(detail))
+                    {
+                        MessageBox.Show("Product was deleted");
+                        bll = new productbll();
+                        dto = bll.Select();
+                        bunifuDataGridView1.DataSource = dto.product;
+                        bunifuDropdown1.DataSource = dto.category;
+                        cleanfilters();
+
+                    }
+                }
+            }
+        }
     }
 }

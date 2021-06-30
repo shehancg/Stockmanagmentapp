@@ -14,9 +14,17 @@ namespace stockmanagmentapp.BLL
     {
         categorydao categorydao = new categorydao();
         productdao dao = new productdao();
+        salesdao salesdao = new salesdao();
         public bool Delete(productdetaildto entity)
         {
-            throw new NotImplementedException();
+            PRODUCT product = new PRODUCT();
+            product.id = entity.productid;
+            dao.Delete(product);
+            SALE sales = new SALE();
+            sales.productid = entity.productid;
+            salesdao.Delete(sales);
+            return true;
+
         }
 
         public bool Getback(productdetaildto entity)

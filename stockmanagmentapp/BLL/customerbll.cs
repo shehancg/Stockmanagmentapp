@@ -12,9 +12,17 @@ namespace stockmanagmentapp.BLL
     class customerbll : IBLL<customerdetaildto, customerdto>
     {
         customerdao dao = new customerdao();
+        salesdao salesdao = new salesdao();
         public bool Delete(customerdetaildto entity)
         {
-            throw new NotImplementedException();
+            CUSTOMER customer = new CUSTOMER();
+            customer.id = entity.id;
+            dao.Delete(customer);
+            SALE sales = new SALE();
+            sales.customerid = entity.id;
+            salesdao.Delete(sales);
+            return true;
+
         }
 
         public bool Getback(customerdetaildto entity)
