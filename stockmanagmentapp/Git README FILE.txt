@@ -13,3 +13,5 @@
 7th commit - database aula haduwa yehhhh
 
 8th commit - exeception error ekak enewa stock add kerena kota stock alert eka hariyata wada kerenewa
+
+9th commit - sales add and listing operations eth sales page eke data pennane na

@@ -1510,6 +1510,7 @@ namespace stockmanagmentapp.mainforms
             this.Controls.Add(this.panel1);
             this.Name = "saleslist";
             this.Text = "saleslist";
+            this.Load += new System.EventHandler(this.saleslist_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
